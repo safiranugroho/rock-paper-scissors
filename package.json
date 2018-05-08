@@ -1,0 +1,9 @@
+{
+  "name": "rock-paper-scissors",
+  "version": "1.0.0",
+  "description": "Multiplayer rock-paper-scissors game.",
+  "main": "index.js",
+  "repository": "https://github.com/safiranugroho/rock-paper-scissors.git",
+  "author": "Safira Nugroho",
+  "license": "MIT"
+}
