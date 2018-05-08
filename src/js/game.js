@@ -1,5 +1,5 @@
 const play = (firstHand, secondHand) => {
-  return firstHand;
+  return 0;
 }
 
 module.exports = {
