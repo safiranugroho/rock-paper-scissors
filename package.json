@@ -5,5 +5,13 @@
   "main": "index.js",
   "repository": "https://github.com/safiranugroho/rock-paper-scissors.git",
   "author": "Safira Nugroho",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "jest": "^22.4.3"
+  },
+  "scripts": {
+    "test": "jest",
+  }
+
 }
