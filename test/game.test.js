@@ -1,8 +1,8 @@
-const game = require('../src/js/game');
+const { play } = require('../src/js/game');
 
-describe('Game', () => {
+describe('game', () => {
   it('should return the same hand if draw', () => {
-    let winner = game.play('rock', 'rock');
+    let winner = play('rock', 'rock');
     expect(winner).toBe('rock');
   });
 });
