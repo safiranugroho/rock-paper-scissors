@@ -1,5 +1,7 @@
-const game = () => {
-
+const play = (firstHand, secondHand) => {
+  return firstHand;
 }
 
-module.exports = game;
+module.exports = {
+  play
+};
