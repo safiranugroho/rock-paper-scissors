@@ -13,6 +13,10 @@ const hands = {
 };
 
 const game = {
+  shoot() {
+    return _.sample(Object.keys(hands));
+  },
+
   match(firstPlayer, secondPlayer) {
     if (firstPlayer === secondPlayer) return 0;
     if (hands[firstPlayer].winsOver === secondPlayer) {
@@ -23,7 +27,7 @@ const game = {
   },
 
   play() {
-    return this.match(_.sample(Object.keys(hands)), _.sample(Object.keys(hands)));
+    return this.match(this.shoot(), this.shoot());
   }
 };
 
