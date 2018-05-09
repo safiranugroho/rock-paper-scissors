@@ -19,6 +19,6 @@ describe('game', () => {
   });
   it('should return 0/1/2 when random play is initiated', () => {
     let winner = play();
-    expect(winner).toBe(0 || 1 || 2);
+    expect(winner === 0 || 1 || 2).toBeTruthy();
   });
 });
