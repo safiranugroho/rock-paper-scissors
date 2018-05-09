@@ -1,0 +1,31 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+div {
+  font-weight: bold;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.two-columns {
+  width: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

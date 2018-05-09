@@ -12,11 +12,11 @@ const hands = {
   }
 }
 
-const match = (firstHand, secondHand) => {
-  if (firstHand === secondHand) return 0;
-  if (hands[firstHand].winsOver === secondHand) {
+const match = (firstPlayer, secondPlayer) => {
+  if (firstPlayer === secondPlayer) return 0;
+  if (hands[firstPlayer].winsOver === secondPlayer) {
     return 1;
-  } else if (hands[secondHand].winsOver === firstHand) {
+  } else if (hands[secondPlayer].winsOver === firstPlayer) {
     return 2;
   }
 }
