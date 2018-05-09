@@ -1,3 +1,5 @@
+const _ = require('lodash');
+
 const hands = {
   'rock': {
     winsOver: 'scissors'
@@ -10,7 +12,7 @@ const hands = {
   }
 }
 
-const play = (firstHand, secondHand) => {
+const match = (firstHand, secondHand) => {
   if (firstHand === secondHand) return 0;
   if (hands[firstHand].winsOver === secondHand) {
     return 1;
@@ -19,6 +21,12 @@ const play = (firstHand, secondHand) => {
   }
 }
 
+const play = () => {
+  return match(_.sample(Object.keys(hands)), _.sample(Object.keys(hands)));
+}
+
 module.exports = {
+  hands,
+  match,
   play
 };
