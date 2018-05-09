@@ -12,8 +12,6 @@ describe('user journey', () => {
 
     beforeAll(() => {
         driver.get(homepage);
-        // driver.findElement(webdriver.By.id(username)).sendKeys(my_username);
-        // return driver.findElement(webdriver.By.id(submit)).click();
     });
 
     afterAll(() => {
@@ -24,13 +22,7 @@ describe('user journey', () => {
       const playButton = await driver.findElement(webdriver.By.id('play-button'));
       expect(playButton).toBeTruthy();
 
-      playButton.getAttribute('text')
-                .then((buttonText) => {
-                  expect(buttonText).toBe('Play');
-                })
-                .catch((error) => {
-                  console.log(error);
-                });
+      const playButtonText = await playButton.getText();
+      expect(playButtonText).toBe('Play');
     });
-
 });
