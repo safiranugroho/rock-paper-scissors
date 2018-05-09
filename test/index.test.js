@@ -1,6 +1,8 @@
 const webdriver = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
 
+const { game } = require('../src/js/game');
+
 const driver = new webdriver.Builder()
     .forBrowser('chrome')
     .withCapabilities(webdriver.Capabilities.chrome())
@@ -45,5 +47,17 @@ describe('index page', () => {
 
       const rock = await secondPlayerHand.getText();
       expect(rock).toBe('Rock');
+    });
+
+    it('should call play() when play button is clicked', async () => {
+      spyOn(game, 'play');
+
+      const playButton = await driver.findElement(webdriver.By.id('play-button'));
+      expect(playButton).toBeTruthy();
+
+      const clicked = await playButton.click();
+      if (clicked === true) {
+        expect(game.play).toHaveBeenCalled();
+      }
     });
 });

@@ -10,23 +10,24 @@ const hands = {
   'paper': {
     winsOver: 'rock'
   }
-}
+};
 
-const match = (firstPlayer, secondPlayer) => {
-  if (firstPlayer === secondPlayer) return 0;
-  if (hands[firstPlayer].winsOver === secondPlayer) {
-    return 1;
-  } else if (hands[secondPlayer].winsOver === firstPlayer) {
-    return 2;
+const game = {
+  match(firstPlayer, secondPlayer) {
+    if (firstPlayer === secondPlayer) return 0;
+    if (hands[firstPlayer].winsOver === secondPlayer) {
+      return 1;
+    } else if (hands[secondPlayer].winsOver === firstPlayer) {
+      return 2;
+    }
+  },
+
+  play() {
+    return this.match(_.sample(Object.keys(hands)), _.sample(Object.keys(hands)));
   }
-}
+};
 
-const play = () => {
-  return match(_.sample(Object.keys(hands)), _.sample(Object.keys(hands)));
-}
 
 module.exports = {
-  hands,
-  match,
-  play
+  game
 };
