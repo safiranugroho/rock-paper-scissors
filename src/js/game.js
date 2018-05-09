@@ -17,7 +17,7 @@ const game = {
     return _.sample(Object.keys(hands));
   },
 
-  match(firstPlayer, secondPlayer) {
+  play(firstPlayer, secondPlayer) {
     if (firstPlayer === secondPlayer) return 0;
     if (hands[firstPlayer].winsOver === secondPlayer) {
       return 1;
@@ -25,10 +25,6 @@ const game = {
       return 2;
     }
   },
-
-  play() {
-    return this.match(this.shoot(), this.shoot());
-  }
 };
 
 

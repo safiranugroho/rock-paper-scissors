@@ -60,4 +60,17 @@ describe('index page', () => {
         expect(game.play).toHaveBeenCalled();
       }
     });
+
+    it('should call shoot() twice when play button is clicked', async () => {
+      spyOn(game, 'shoot');
+
+      const playButton = await driver.findElement(webdriver.By.id('play-button'));
+      expect(playButton).toBeTruthy();
+
+      const clicked = await playButton.click();
+      if (clicked === true) {
+        expect((game.shoot).calls.count()).toEqual(2);
+      }
+
+    })
 });

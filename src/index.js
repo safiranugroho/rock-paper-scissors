@@ -2,7 +2,10 @@ const styles = require('./scss/index.scss');
 const { game } = require('./js/game');
 
 const playGame = () => {
-  game.play();
+  const firstPlayer = game.shoot();
+  const secondPlayer = game.shoot();
+
+  game.play(firstPlayer, secondPlayer);
 }
 
 window.onload = () => {
