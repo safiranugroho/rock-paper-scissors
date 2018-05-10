@@ -10,7 +10,11 @@ const playGame = () => {
   document.getElementById('second-player-hand')
           .innerHTML = secondPlayer;
 
-  game.play(firstPlayer, secondPlayer);
+  const winner = game.play(firstPlayer, secondPlayer);
+  document.getElementById('winner')
+          .innerHTML = winner === 0
+                              ? 'It\'s a draw!'
+                              : 'Player ' + winner + ' wins!';
 }
 
 window.onload = () => {
