@@ -13,7 +13,7 @@ div {
 
 h1 {
   font-weight: bold;
-  font-size: 40px;
+  font-size: 35px;
 }
 
 h2 {
@@ -57,15 +57,28 @@ h2 {
   height: 50vh;
 }
 
-#play-button {
-  margin: 50px 0;
-  font-size: 15px;
-  background: maroon;
-  color: white;
-  font-weight: bold;
-  padding: 10px 20px;
+#user-play {
+  button {
+    width: 75px;
+    font-size: 10px;
+    background: navy;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+  }
+}
 
-  &:focus {
-    outline: none;
+#random-play {
+  button {
+    margin: 20px 0;
+    font-size: 12px;
+    background: maroon;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+
+    &:focus {
+      outline: none;
+    }
   }
 }

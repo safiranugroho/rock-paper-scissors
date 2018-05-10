@@ -25,22 +25,6 @@ describe('index page', () => {
       driver.quit();
     });
 
-    it('should display Play button', () => {
-      driver.findElement(webdriver.By.id('play-button'))
-            .then((playButton) => {
-              playButton.getText()
-                        .then((text) => {
-                          expect(text).toBe('Play');
-                        })
-                        .catch((error) => {
-                          throw error;
-                        });
-            })
-            .catch((error) => {
-              throw error;
-            });
-    });
-
     it('should display rock as first player\'s default hand', () => {
       driver.findElement(webdriver.By.id('first-player-hand'))
             .then((firstPlayerHand) => {
