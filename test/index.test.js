@@ -26,9 +26,9 @@ describe('index page', () => {
     });
 
     it('should display rock as first player\'s default hand', async () => {
-        const firstPlayerHand = await driver.findElement(webdriver.By.id('first-player-hand'));
-        const text = await firstPlayerHand.getText();
-        expect(text).toBe('rock');
+      const firstPlayerHand = await driver.findElement(webdriver.By.id('first-player-hand'));
+      const text = await firstPlayerHand.getText();
+      expect(text).toBe('rock');
     });
 
     it('should display rock as second player\'s default hand', async () => {
