@@ -25,67 +25,31 @@ describe('index page', () => {
       driver.quit();
     });
 
-    it('should display rock as first player\'s default hand', () => {
-      driver.findElement(webdriver.By.id('first-player-hand'))
-            .then((firstPlayerHand) => {
-              firstPlayerHand.getText()
-                             .then((text) => {
-                               expect(text).toBe('rock');
-                             })
-                             .catch((error) => {
-                               throw error;
-                             });
-            })
-            .catch((error) => {
-              throw error;
-            });
+    it('should display rock as first player\'s default hand', async () => {
+        const firstPlayerHand = await driver.findElement(webdriver.By.id('first-player-hand'));
+        const text = await firstPlayerHand.getText();
+        expect(text).toBe('rock');
     });
 
-    it('should display rock as second player\'s default hand', () => {
-      driver.findElement(webdriver.By.id('second-player-hand'))
-            .then((secondPlayerHand) => {
-              secondPlayerHand.getText()
-                              .then((text) => {
-                                expect(text).toBe('rock');
-                              })
-                              .catch((error) => {
-                                throw error;
-                              });
-            })
-            .catch((error) => {
-              throw error;
-            });
+    it('should display rock as second player\'s default hand', async () => {
+      const secondPlayerHand = await driver.findElement(webdriver.By.id('second-player-hand'));
+      const text = await secondPlayerHand.getText();
+      expect(text).toBe('rock');
     });
 
-    it('should call play() when play button is clicked', () => {
-      driver.findElement(webdriver.By.id('play-button'))
-            .then((playButton) => {
-              playButton.click()
-                        .then(() => {
-                          expect(game.play).toHaveBeenCalled();
-                        })
-                        .catch((error) => {
-                          throw error;
-                        });
-            })
-            .catch((error) => {
-              throw error;
-            });
+    it('should call play() when play button is clicked', async () => {
+      const playButton = await driver.findElement(webdriver.By.id('play-button'));
+      await playButton.click();
+      setTimeout(() => {
+        expect(game.play).toHaveBeenCalled();
+      }, 1000);
     });
 
-    it('should call shoot() twice when play button is clicked', () => {
-      driver.findElement(webdriver.By.id('play-button'))
-            .then((playButton) => {
-              playButton.click()
-                        .then(() => {
-                          expect((game.shoot).calls.count()).toEqual(2);
-                        })
-                        .catch((error) => {
-                          throw error;
-                        });
-            })
-            .catch((error) => {
-              throw error;
-            });
+    it('should call shoot() twice when play button is clicked', async () => {
+      const playButton = await driver.findElement(webdriver.By.id('play-button'));
+      await playButton.click();
+      setTimeout(() => {
+        expect((game.shoot).calls.count()).toEqual(2);
+      }, 1000);
     });
 });
