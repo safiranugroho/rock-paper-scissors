@@ -3,7 +3,7 @@
 set -e
 
 npm start &
-npm test:cypress && fg
+npm test:cypress &
 
 wait %2
 
