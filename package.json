@@ -19,7 +19,6 @@
     "jest-plugin-unhandled-promise": "^2.9.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
-    "selenium-webdriver": "^4.0.0-alpha.1",
     "style-loader": "^0.21.0",
     "webpack": "^4.8.1",
     "webpack-cli": "^2.1.3",
@@ -30,7 +29,7 @@
     "build": "node_modules/.bin/webpack -p",
     "test": "jest",
     "test:dev": "jest --watchAll",
-    "test:cypress":"cypress run"
+    "test:cypress": "cypress run"
   },
   "jest": {
     "transform": {
@@ -39,10 +38,5 @@
     "setupFiles": [
       "jest-plugin-unhandled-promise/setup"
     ]
-  },
-  "dependencies": {
-    "chai": "^4.1.2",
-    "lodash": "^4.17.10",
-    "mocha": "^5.1.1"
   }
 }

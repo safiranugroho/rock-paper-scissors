@@ -1,6 +1,6 @@
 const { game } = require('../src/js/game');
 
-describe('game', () => {
+describe('game.js', () => {
   it('should return 0 if draw', () => {
     let winner = game.play('rock', 'rock');
     expect(winner).toBe(0);

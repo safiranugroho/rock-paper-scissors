@@ -1,5 +1,3 @@
-const _ = require('lodash');
-
 const hands = {
   'rock': {
     winsOver: 'scissors'
@@ -14,7 +12,7 @@ const hands = {
 
 const game = {
   shoot() {
-    return _.sample(Object.keys(hands));
+    return Object.keys(hands)[Math.floor(Math.random() * Object.keys(hands).length)];
   },
 
   play(firstPlayer, secondPlayer) {
