@@ -56,6 +56,39 @@ describe('Rock Paper Scissors', () => {
       cy.get('#first-player-hand')
         .should('contain', 'Scissors');
     });
+
+    it('should update second player\'s hand when a hand button is clicked', () => {
+      cy.visit(homepage);
+
+      cy.get('#rock-button')
+        .click();
+
+      cy.get('#second-player-hand')
+        .should('not.be.empty');
+
+      cy.get('#paper-button')
+        .click();
+
+      cy.get('#second-player-hand')
+        .should('not.be.empty');
+
+      cy.get('#scissors-button')
+        .click();
+
+      cy.get('#second-player-hand')
+        .should('not.be.empty');
+    });
+
+    it('should update winner when a hand button is clicked', () => {
+      cy.visit(homepage);
+
+      cy.get('#rock-button')
+        .click();
+
+      cy.get('#winner')
+        .should('not.be.empty');
+    });
+    
   });
 
 })

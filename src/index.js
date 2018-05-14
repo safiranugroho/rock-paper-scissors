@@ -18,26 +18,46 @@ const randomGame = () => {
           .innerHTML = getWinner(result.winner);
 }
 
-const updateHand = (text) => {
+const singlePlayerGame = (hand) => {
+  updateFirstHand(hand);
+  updateSecondHand();
+
+  const players = getCurrentHands();
+  const result = game.play(players.first, players.second);
+
+  document.getElementById('winner')
+          .innerHTML = getWinner(result);
+}
+
+const updateFirstHand = (hand) => {
   document.getElementById('first-player-hand')
-          .innerHTML = text;
+          .innerHTML = hand;
+}
+
+const updateSecondHand = () => {
+  document.getElementById('second-player-hand')
+          .innerHTML = game.shoot();
+}
+
+const getCurrentHands = () => {
+  const first = document.getElementById('first-player-hand').innerHTML;
+  const second = document.getElementById('second-player-hand').innerHTML;
+
+  return { first, second }
 }
 
 window.onload = () => {
   document.getElementById('play-button').addEventListener('click', randomGame);
 
   document.getElementById('rock-button')
-          .addEventListener('click', () => {
-                            updateHand((document.getElementById('rock-button')).innerHTML);
-  });
+          .addEventListener('click', () =>
+                                      singlePlayerGame('Rock'));
 
   document.getElementById('paper-button')
-          .addEventListener('click', () => {
-                            updateHand(document.getElementById('paper-button').innerHTML);
-  });
+          .addEventListener('click', () =>
+                                      singlePlayerGame('Paper'));
 
   document.getElementById('scissors-button')
-          .addEventListener('click', () => {
-                            updateHand(document.getElementById('scissors-button').innerHTML);
-  });
+          .addEventListener('click', () =>
+                                      singlePlayerGame('Scissors'));
 }
