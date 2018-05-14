@@ -12,34 +12,17 @@ const randomGame = () => {
           .innerHTML = getWinner(result.winner);
 }
 
-const singlePlayerGame = (hand) => {
-  updateFirstHand(hand);
-  updateSecondHand();
+const singlePlayerGame = (player) => {
+  const computer = game.shoot();
+  const result = game.play(player, computer);
 
-  const players = getCurrentHands();
-  const result = game.play(players.first, players.second);
-
+  document.getElementById('first-player-hand')
+          .innerHTML = player;
+  document.getElementById('second-player-hand')
+          .innerHTML = computer
   document.getElementById('winner')
           .innerHTML = getWinner(result);
 }
-
-const updateFirstHand = (hand) => {
-  document.getElementById('first-player-hand')
-          .innerHTML = hand;
-}
-
-const updateSecondHand = () => {
-  document.getElementById('second-player-hand')
-          .innerHTML = game.shoot();
-}
-
-const getCurrentHands = () => {
-  const first = document.getElementById('first-player-hand').innerHTML;
-  const second = document.getElementById('second-player-hand').innerHTML;
-
-  return { first, second }
-}
-
 
 const getWinner = (winner) => {
   return winner === 0
