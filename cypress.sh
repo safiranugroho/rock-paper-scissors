@@ -3,4 +3,4 @@ set -e
 yarn start &
 yarn test:cypress
 jobs
-kill $(jobs -p)
+kill 9 $(jobs -p)
