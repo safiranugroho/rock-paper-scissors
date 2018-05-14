@@ -29,7 +29,8 @@
     "start": "node_modules/.bin/webpack-dev-server --host 0.0.0.0 --inline --hot",
     "build": "node_modules/.bin/webpack -p",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:dev": "jest --watchAll",
+    "test:cypress":"cypress run"
   },
   "jest": {
     "transform": {
