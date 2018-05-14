@@ -44,7 +44,9 @@ const getCurrentHands = () => {
 const getWinner = (winner) => {
   return winner === 0
                 ? 'It\'s a draw!'
-                : 'Player ' + winner + ' wins!';
+                : winner === 1 ?
+                'You won!'
+                : 'Computer won!';
 }
 
 window.onload = () => {
