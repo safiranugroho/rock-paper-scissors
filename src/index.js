@@ -1,12 +1,6 @@
 const styles = require('./scss/index.scss');
 const { game } = require('./js/game');
 
-const getWinner = (winner) => {
-  return winner === 0
-                ? 'It\'s a draw!'
-                : 'Player ' + winner + ' wins!';
-}
-
 const randomGame = () => {
   const result = game.random();
 
@@ -44,6 +38,13 @@ const getCurrentHands = () => {
   const second = document.getElementById('second-player-hand').innerHTML;
 
   return { first, second }
+}
+
+
+const getWinner = (winner) => {
+  return winner === 0
+                ? 'It\'s a draw!'
+                : 'Player ' + winner + ' wins!';
 }
 
 window.onload = () => {
