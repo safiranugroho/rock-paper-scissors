@@ -1,12 +1,12 @@
 const hands = {
-  'rock': {
-    winsOver: 'scissors'
+  'Rock': {
+    winsOver: 'Scissors'
   },
-  'scissors': {
-    winsOver: 'paper'
+  'Scissors': {
+    winsOver: 'Paper'
   },
-  'paper': {
-    winsOver: 'rock'
+  'Paper': {
+    winsOver: 'Rock'
   }
 };
 
@@ -23,6 +23,18 @@ const game = {
       return 2;
     }
   },
+
+  random() {
+    const firstPlayer = this.shoot();
+    const secondPlayer = this.shoot();
+    const winner = this.play(firstPlayer, secondPlayer);
+
+    return {
+      firstPlayer,
+      secondPlayer,
+      winner
+    }
+  }
 };
 
 

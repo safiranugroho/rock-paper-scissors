@@ -34,4 +34,28 @@ describe('Rock Paper Scissors', () => {
     });
   });
 
+  context('Single user play', () => {
+    it('should update first player\'s hand when a hand button is clicked', () => {
+      cy.visit(homepage);
+
+      cy.get('#rock-button')
+        .click();
+
+      cy.get('#first-player-hand')
+        .should('contain', 'Rock');
+
+      cy.get('#paper-button')
+        .click();
+
+      cy.get('#first-player-hand')
+        .should('contain', 'Paper');
+
+      cy.get('#scissors-button')
+        .click();
+
+      cy.get('#first-player-hand')
+        .should('contain', 'Scissors');
+    });
+  });
+
 })
