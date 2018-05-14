@@ -29,7 +29,7 @@
     "build": "node_modules/.bin/webpack -p",
     "test": "jest",
     "test:dev": "jest --watchAll",
-    "test:cypress": "cypress run"
+    "test:cypress": "node_modules/.bin/cypress run"
   },
   "jest": {
     "transform": {
