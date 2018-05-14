@@ -3,8 +3,6 @@
 set -e
 
 npm start &
-npm test:cypress &
-
-wait %2
+npm test:cypress
 
 kill %1
