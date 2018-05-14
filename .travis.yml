@@ -6,3 +6,15 @@ node_js:
 cache:
   directories:
     - "node_modules"
+
+notifications:
+  email: false
+
+jobs:
+  include:
+    - stage: build
+      script: npm build
+    - stage: unit test
+      script: npm test
+    - stage: end-to-end test
+      script: ./cypress.sh
