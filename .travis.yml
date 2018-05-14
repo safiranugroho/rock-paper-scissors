@@ -13,8 +13,8 @@ notifications:
 jobs:
   include:
     - stage: build
-      script: npm build
+      script: yarn build
     - stage: unit test
-      script: npm test
+      script: yarn test
     - stage: end-to-end test
       script: ./cypress.sh

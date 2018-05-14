@@ -1,11 +1,5 @@
 #!/bin/sh
-
 set -e
-
-npm start &
-
-wait %1
-
-npm test:cypress
-
+yarn start &
+yarn test:cypress
 kill %1
