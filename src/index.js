@@ -9,9 +9,7 @@ const winnerToText = (winner) => {
                 : 'Computer won!';
 }
 
-const playGame = (player) => {
-  const result = game.play(player);
-
+const showResult = (result) => {
   document.getElementById('first-player-hand')
           .innerHTML = result.player;
   document.getElementById('second-player-hand')
@@ -22,17 +20,17 @@ const playGame = (player) => {
 
 window.onload = () => {
   document.getElementById('play-button')
-          .addEventListener('click', () => playGame());
+          .addEventListener('click', () => showResult(game.throwRandom()));
 
   document.getElementById('rock-button')
           .addEventListener('click', () =>
-                                      playGame('Rock'));
+                                      showResult(game.throwRock()));
 
   document.getElementById('paper-button')
           .addEventListener('click', () =>
-                                      playGame('Paper'));
+                                      showResult(game.throwPaper()));
 
   document.getElementById('scissors-button')
           .addEventListener('click', () =>
-                                      playGame('Scissors'));
+                                      showResult(game.throwScissors()));
 }

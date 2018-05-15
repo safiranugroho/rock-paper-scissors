@@ -11,11 +11,11 @@ const hands = {
 };
 
 const game = {
-  shoot() {
+  _shoot() {
     return Object.keys(hands)[Math.floor(Math.random() * Object.keys(hands).length)];
   },
 
-  getWinner(firstPlayer, secondPlayer) {
+  _getWinner(firstPlayer, secondPlayer) {
     if (firstPlayer === secondPlayer) return 0;
     if (hands[firstPlayer].winsOver === secondPlayer) {
       return 1;
@@ -24,20 +24,31 @@ const game = {
     }
   },
 
-  play(hand) {
-    const player = typeof hand
-                   === 'undefined'
-                   ? this.shoot()
-                   : hand;
-
-    const computer = this.shoot();
-    const winner = this.getWinner(player, computer);
+  _play(player) {
+    const computer = this._shoot();
+    const winner = this._getWinner(player, computer);
 
     return {
       player,
       computer,
       winner
     }
+  },
+
+  throwRock() {
+    return this._play('Rock');
+  },
+
+  throwPaper() {
+    return this._play('Paper');
+  },
+
+  throwScissors() {
+    return this._play('Scissors');
+  },
+
+  throwRandom() {
+    return this._play(this._shoot());
   }
 };
 
