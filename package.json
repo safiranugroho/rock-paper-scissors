@@ -38,5 +38,8 @@
     "setupFiles": [
       "jest-plugin-unhandled-promise/setup"
     ]
+  },
+  "dependencies": {
+    "eslint": "^4.19.1"
   }
 }
