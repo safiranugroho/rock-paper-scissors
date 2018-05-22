@@ -1,3 +1,12 @@
+const request = require('request-promise');
+
+const options = {
+  method: 'POST',
+  uri: 'http://localhost:5000/api/game',
+  body: '',
+  json: true
+};
+
 const hands = {
   'Rock': {
     winsOver: 'Scissors'
@@ -24,31 +33,35 @@ const game = {
     }
   },
 
-  _play(player) {
-    const computer = this._shoot();
-    const winner = this._getWinner(player, computer);
+  async _play(player) {
+    options.body = player;
 
-    return {
-      player,
-      computer,
-      winner
-    }
+      return await new Promise((resolve, reject) => {
+        request(options)
+          .then((response) => {
+            resolve(response);
+          })
+          .catch((error) => {
+            reject(error);
+          });
+      });
   },
 
-  throwRock() {
-    return this._play('Rock');
+  
+  async throwRock() {
+    return await this._play('Rock');
   },
 
-  throwPaper() {
-    return this._play('Paper');
+  async throwPaper() {
+    return await this._play('Paper');
   },
 
-  throwScissors() {
-    return this._play('Scissors');
+  async throwScissors() {
+    return await this._play('Scissors');
   },
 
-  throwRandom() {
-    return this._play(this._shoot());
+  async throwRandom() {
+    return await this._play(this._shoot());
   }
 };
 

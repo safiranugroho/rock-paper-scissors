@@ -5,7 +5,7 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'none',
   entry: {
-    app: './index.js',
+    app: ['babel-polyfill', './index.js'],
   },
   output: {
     filename: '[name].bundle.js',
@@ -33,6 +33,19 @@ module.exports = {
           'sass-loader',
         ],
       },
+      { 
+        test: /\.json$/, 
+        exclude: [/node_modules/],
+        loader: 'json-loader' 
+      }
     ],
   },
+  resolve: {
+    extensions: ['.webpack.js', '.web.js', '.js']
+  },
+  node: {
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
+  }
 };

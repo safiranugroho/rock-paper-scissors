@@ -9,7 +9,7 @@ const winnerToText = (winner) => {
                 : 'Computer won!';
 }
 
-const showResult = (result) => {
+const showResult = (result) => { 
   document.getElementById('first-player-hand')
           .innerHTML = result.player;
   document.getElementById('second-player-hand')
@@ -20,17 +20,46 @@ const showResult = (result) => {
 
 window.onload = () => {
   document.getElementById('play-button')
-          .addEventListener('click', () => showResult(game.throwRandom()));
+          .addEventListener('click', () => {
+                game.throwRandom()
+                        .then((result) => {
+                                showResult(result);
+                        })
+                        .catch((error) => {
+                                throw error;
+                        })
+          });
 
   document.getElementById('rock-button')
-          .addEventListener('click', () =>
-                                      showResult(game.throwRock()));
+          .addEventListener('click', () => {
+                game.throwRock()
+                    .then((result) => {
+                        showResult(result);
+                    })
+                    .catch((error) => {
+                        throw error;
+                    })
+          });
 
   document.getElementById('paper-button')
-          .addEventListener('click', () =>
-                                      showResult(game.throwPaper()));
+          .addEventListener('click', () => {
+                game.throwPaper()
+                        .then((result) => {
+                                showResult(result);
+                        })
+                        .catch((error) => {
+                                throw error;
+                        })         
+          });
 
   document.getElementById('scissors-button')
-          .addEventListener('click', () =>
-                                      showResult(game.throwScissors()));
+          .addEventListener('click', () => {
+                game.throwScissors()
+                        .then((result) => {
+                                showResult(result);
+                        })
+                        .catch((error) => {
+                                throw error;
+                        })
+          });
 }
