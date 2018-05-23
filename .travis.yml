@@ -13,7 +13,7 @@ notifications:
 jobs:
   include:
     - stage: build
-      script: cd rps && yarn build
+      script: ./build.sh
     - stage: unit test
       script: ./rps-c#/xunit.sh
     - stage: end-to-end test
