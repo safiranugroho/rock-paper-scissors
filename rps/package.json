@@ -16,9 +16,7 @@
     "babel-preset-env": "^1.6.1",
     "css-loader": "^0.28.11",
     "cypress": "^2.1.0",
-    "jest": "^22.4.3",
-    "jest-plugin-unhandled-promise": "^2.9.0",
-    "json-loader": "^0.5.7",
+    "json-loader": "^0.5.7", 
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
@@ -29,17 +27,7 @@
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server --host 0.0.0.0 --inline --hot",
     "build": "node_modules/.bin/webpack -p",
-    "test": "jest",
-    "test:dev": "jest --watchAll",
-    "test:cypress": "node_modules/.bin/cypress run"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.js$": "babel-jest"
-    },
-    "setupFiles": [
-      "jest-plugin-unhandled-promise/setup"
-    ]
+    "test:cypress a": "node_modules/.bin/cypress run"
   },
   "dependencies": {
     "eslint": "^4.19.1",

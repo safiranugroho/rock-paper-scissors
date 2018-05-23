@@ -15,6 +15,6 @@ jobs:
     - stage: build
       script: yarn build
     - stage: unit test
-      script: yarn test
+      script: ./rps-c#/xunit.sh
     - stage: end-to-end test
-      script: ./cypress.sh
+      script: ./rps/cypress.sh
