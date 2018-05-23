@@ -1,7 +1,18 @@
 # NPM
-node_modules/
-yarn-error.log
+rps/node_modules/
+rps/yarn-error.log
 
 # Cypress
-cypress/videos/
-cypress/screenshots/
+rps/cypress/videos/
+rps/cypress/screenshots/
+
+# Visual Studio
+.vscode
+
+# Build results
+rps-c#/rps/bin/
+rps-c#/rps/obj/
+
+rps-c#/rps.Tests/bin/
+rps-c#/rps.Tests/obj/
+
