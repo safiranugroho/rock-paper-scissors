@@ -1,7 +1,6 @@
 #!/bin/sh
 set -e
 pwd
-cd ..
 cd rps-c#/rps/
 pwd
 dotnet build
