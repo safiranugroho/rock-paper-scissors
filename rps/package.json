@@ -27,7 +27,7 @@
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server --host 0.0.0.0 --inline --hot",
     "build": "node_modules/.bin/webpack -p",
-    "test:cypress a": "node_modules/.bin/cypress run"
+    "test:cypress": "node_modules/.bin/cypress run"
   },
   "dependencies": {
     "eslint": "^4.19.1",
