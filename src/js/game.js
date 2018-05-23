@@ -7,33 +7,8 @@ const options = {
   json: true
 };
 
-const hands = {
-  'Rock': {
-    winsOver: 'Scissors'
-  },
-  'Scissors': {
-    winsOver: 'Paper'
-  },
-  'Paper': {
-    winsOver: 'Rock'
-  }
-};
-
 const game = {
-  _shoot() {
-    return Object.keys(hands)[Math.floor(Math.random() * Object.keys(hands).length)];
-  },
-
-  _getWinner(firstPlayer, secondPlayer) {
-    if (firstPlayer === secondPlayer) return 0;
-    if (hands[firstPlayer].winsOver === secondPlayer) {
-      return 1;
-    } else if (hands[secondPlayer].winsOver === firstPlayer) {
-      return 2;
-    }
-  },
-
-  async _play(player) {
+  async _play(player = null) {
     options.body = player;
 
       return await new Promise((resolve, reject) => {
@@ -61,7 +36,7 @@ const game = {
   },
 
   async throwRandom() {
-    return await this._play(this._shoot());
+    return await this._play();
   }
 };
 
