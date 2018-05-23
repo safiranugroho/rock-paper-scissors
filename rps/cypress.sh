@@ -9,6 +9,7 @@ cd ../..
 pwd
 cd rps
 pwd
+yarn install
 yarn build
 yarn start &
 yarn test:cypress
