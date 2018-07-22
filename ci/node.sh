@@ -2,6 +2,6 @@
 
 # export ROOT_FOLDER=$( pwd )
 
-cd rps/rps
+cd rock-paper-scissors/rps
 npm install
 npm run-script build
