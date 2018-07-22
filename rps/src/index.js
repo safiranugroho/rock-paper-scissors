@@ -2,9 +2,9 @@ const styles = require('./scss/index.scss');
 const { game } = require('./js/game');
 
 const winnerToText = (winner) => {
-  return winner === 0
+  return winner === '0'
                 ? 'It\'s a draw!'
-                : winner === 1
+                : winner === '1'
                 ? 'You won!'
                 : 'Computer won!';
 }

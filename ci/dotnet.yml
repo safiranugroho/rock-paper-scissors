@@ -1,0 +1,12 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: {repository: microsoft/dotnet, tag: 2.1-sdk-alpine}
+
+inputs:
+- name: rock-paper-scissors
+
+run:
+  path: rock-paper-scissors/ci/dotnet.sh

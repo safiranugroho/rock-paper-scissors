@@ -1,0 +1,17 @@
+---
+resources:
+- name: rock-paper-scissors
+  type: git
+  source:
+    uri: https://github.com/safiranugroho/rock-paper-scissors.git
+
+jobs:
+- name: build
+  public: true
+  plan:
+  - get: rock-paper-scissors
+    trigger: true
+  - task: build back-end
+    file: rock-paper-scissors/ci/dotnet.yml
+  - task: build front-end
+    file: rock-paper-scissors/ci/node.yml
