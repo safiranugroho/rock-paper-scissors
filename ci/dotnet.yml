@@ -12,4 +12,4 @@ run:
   path: rock-paper-scissors/ci/dotnet.sh
 
 caches:
-- .nuget
+- path: .nuget
