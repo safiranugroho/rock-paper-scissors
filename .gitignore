@@ -10,9 +10,9 @@ rps/cypress/screenshots/
 .vscode
 
 # Build results
-rps-c#/rps/bin/
-rps-c#/rps/obj/
+rps-csharp/rps/bin/
+rps-csharp/rps/obj/
 
-rps-c#/rps.Tests/bin/
-rps-c#/rps.Tests/obj/
+rps-csharp/rps.Tests/bin/
+rps-csharp/rps.Tests/obj/
 

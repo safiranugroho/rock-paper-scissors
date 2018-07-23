@@ -20,6 +20,6 @@ jobs:
     - stage: build
       script: ./build.sh
     - stage: unit test
-      script: ./rps-c#/xunit.sh
+      script: ./rps-csharp/xunit.sh
     - stage: end-to-end test
       script: ./rps/cypress.sh

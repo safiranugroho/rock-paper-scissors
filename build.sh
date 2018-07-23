@@ -7,6 +7,6 @@ yarn install
 yarn build
 cd ..
 pwd
-cd rps-c#/rps
+cd rps-csharp/rps
 dotnet restore
 dotnet build

@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 
-cd rock-paper-scissors/rps-c#/rps.Tests
+ROOT_FOLDER=$( pwd )
+export NUGET_PACKAGES=$ROOT_FOLDER/.nuget/packages
+
+cd rock-paper-scissors/rps-csharp/rps.Tests
 dotnet restore
 dotnet test
