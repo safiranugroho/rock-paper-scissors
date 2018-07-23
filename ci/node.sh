@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
-# export ROOT_FOLDER=$( pwd )
+ROOT_FOLDER=$( pwd )
+export NPM_CONFIG_PREFIX=$ROOT_FOLDER/node_modules
 
 cd rock-paper-scissors/rps
 npm install
