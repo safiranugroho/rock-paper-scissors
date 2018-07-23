@@ -12,4 +12,4 @@ run:
   path: rock-paper-scissors/ci/node.sh
 
 caches:
-- path: node_modules
+- path: rock-paper-scissors/rps/node_modules
