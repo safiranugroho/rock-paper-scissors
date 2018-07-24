@@ -1,17 +1,38 @@
 ---
 resources:
-- name: rock-paper-scissors
+# - name: rock-paper-scissors
+#   type: git
+#   source:
+#     uri: https://github.com/safiranugroho/rock-paper-scissors.git
+- name: back-end
   type: git
   source:
-    uri: https://github.com/safiranugroho/rock-paper-scissors.git
+    uri: https://github.com/safiranugroho/rock-paper-scissors/tree/master/rps-csharp
+- name: front-end
+  type: git
+  source:
+      uri: https://github.com/safiranugroho/rock-paper-scissors/tree/master/rps
 
 jobs:
-- name: build
+# - name: fetch back-end
+#   public: true
+#   plan:
+#   - get: rock-paper-scissors
+#     trigger: true
+#   - put: back-end
+#     params:
+#       repository: rock-paper-scissors/rps-csharp
+- name: build back-end
   public: true
   plan:
-  - get: rock-paper-scissors
+  - get: back-end
     trigger: true
   - task: build back-end
     file: rock-paper-scissors/ci/dotnet.yml
+- name: build front-end
+  public: true
+  plan: 
+  - get: front-end
+    trigger: true
   - task: build front-end
     file: rock-paper-scissors/ci/node.yml
