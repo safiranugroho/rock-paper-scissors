@@ -13,4 +13,4 @@ back-end/rps.Tests/bin/
 back-end/rps.Tests/obj/
 
 # Miscellaneous
-.DS_Store
+*/.DS_Store
