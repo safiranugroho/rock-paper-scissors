@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 pwd
-cd rps-csharp/rps.Tests/
+cd back-end/rps.Tests/
 dotnet build
 dotnet test
 jobs

@@ -1,18 +1,20 @@
 # NPM
-rps/node_modules/
-rps/yarn-error.log
+front-end/node_modules/
+front-end/yarn-error.log
 
 # Cypress
-rps/cypress/videos/
-rps/cypress/screenshots/
+front-end/cypress/videos/
+front-end/cypress/screenshots/
 
 # Visual Studio
 .vscode
 
 # Build results
-rps-csharp/rps/bin/
-rps-csharp/rps/obj/
+back-end/rps/bin/
+back-end/rps/obj/
 
-rps-csharp/rps.Tests/bin/
-rps-csharp/rps.Tests/obj/
+back-end/rps.Tests/bin/
+back-end/rps.Tests/obj/
 
+# Miscellaneous
+.DS_Store
