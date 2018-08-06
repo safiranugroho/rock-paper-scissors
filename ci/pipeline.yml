@@ -4,24 +4,8 @@ resources:
   type: git
   source:
     uri: https://github.com/safiranugroho/rock-paper-scissors.git
-# - name: back-end
-#   type: git
-#   source:
-#     uri: https://github.com/safiranugroho/rock-paper-scissors/tree/master/rps-csharp
-# - name: front-end
-#   type: git
-#   source:
-#       uri: https://github.com/safiranugroho/rock-paper-scissors/tree/master/rps
 
 jobs:
-# - name: fetch back-end
-#   public: true
-#   plan:
-#   - get: rock-paper-scissors
-#     trigger: true
-#   - put: back-end
-#     params:
-#       repository: rock-paper-scissors/rps-csharp
 - name: build back-end
   public: true
   plan:

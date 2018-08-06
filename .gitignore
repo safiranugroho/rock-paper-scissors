@@ -2,10 +2,6 @@
 front-end/node_modules/
 front-end/yarn-error.log
 
-# Cypress
-front-end/cypress/videos/
-front-end/cypress/screenshots/
-
 # Visual Studio
 .vscode
 
