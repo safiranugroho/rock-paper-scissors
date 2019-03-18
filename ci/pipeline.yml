@@ -6,16 +6,16 @@ resources:
     uri: https://github.com/safiranugroho/rock-paper-scissors.git
 
 jobs:
-- name: build back-end
+- name: back-end
   public: true
   plan:
   - get: rock-paper-scissors
     trigger: true
   - task: build back-end
     file: rock-paper-scissors/ci/dotnet.yml
-- name: build front-end
+- name: front-end
   public: true
-  plan: 
+  plan:
   - get: rock-paper-scissors
     trigger: true
   - task: build front-end
